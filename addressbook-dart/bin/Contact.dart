@@ -1,4 +1,3 @@
-import 'package:test/test.dart';
 
 class Contact {
   int _id = 0;
@@ -7,7 +6,7 @@ class Contact {
   String _mobile = "";
   String _email = "";
 
-  Contact(){}
+  Contact();
 
   Contact.parameter(
       int id, String firstName, String lastName, String mobile, String email) {
