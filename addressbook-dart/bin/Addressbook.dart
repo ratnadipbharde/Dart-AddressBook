@@ -11,7 +11,6 @@ class Addressbook {
 
   addContact() {
     Contact contact = Contact();
-
     contact.setId(map.length + 1);
     print("Enter First Name : ");
     contact.setFirstName(stdin.readLineSync()!);
