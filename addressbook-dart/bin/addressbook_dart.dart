@@ -7,7 +7,7 @@ void main(List<String> arguments) {
   addressbook.add();
   bool loop = true;
   while (loop) {
-    print("0. Exit.\n1. Show All Contact.\n2. Add Contact.\n3. Delete Contact");
+    print("0. Exit.\n1. Show All Contact.\n2. Add Contact.\n3. Delete Contact\n4. Delete Contact by Name1");
     print("Enter Your Choice : ");
     int number = int.parse(stdin.readLineSync()!);
     switch (number) {
@@ -21,7 +21,22 @@ void main(List<String> arguments) {
         addressbook.addContact();
         break;
       case 3:
-        addressbook.deleteContactById();
+        print("Enter contact id to delete : ");
+        int id=int.parse(stdin.readLineSync()!);
+        addressbook.deleteContactById(id);
+        break;
+      case 4:
+        print("Enter First Name : ");
+        String firstName=(stdin.readLineSync()!).toLowerCase();
+        print("Enter Last Name : ");
+        String lastName=(stdin.readLineSync()!).toLowerCase();
+        int id=addressbook.findIdByName(firstName, lastName);
+        if(id==0){
+          print("Contact not found...");
+        }else{
+          addressbook.deleteContactById(id);
+        }
+
         break;
       default:
         print("invalid input");
